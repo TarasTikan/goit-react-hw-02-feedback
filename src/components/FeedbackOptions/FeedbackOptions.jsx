@@ -1,7 +1,7 @@
 import React from 'react';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';
-import { FeedbackList, FeedbackBtn} from './FeedbackOptions.styled';
+import { FeedbackList, FeedbackBtn } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
