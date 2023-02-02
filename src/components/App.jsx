@@ -10,8 +10,8 @@ export class App extends Component {
 
 handleGoodFeedBack = () => {
   this.setstate(()=>{
-    this.state.good(() => {
-      good: this.state.good + 1
+    this.state.good(prevState => {
+      good: prevState.good + 1
     })
   })
 }
