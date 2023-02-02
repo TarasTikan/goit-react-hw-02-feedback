@@ -26,7 +26,7 @@ export const Statistics = ({
           <p>Total: {total}</p>
         </li>
         <li>
-          <p>Positive feedback: {positivePercentage}%</p>
+          <p>Positive feedback: {Math.round(positivePercentage)}%</p>
         </li>
       </StatisticsList>
     </>
