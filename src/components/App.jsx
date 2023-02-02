@@ -1,21 +1,25 @@
 import { Statistics } from "./Statistics/Statistics";
 import { Component } from "react";
-// export const App = () => {
-//   return (
-//     <>
-//     </>
 
+export class App extends Component {
+  state = {
+    good: 2,
+    neutral: 6,
+    bad: 4
+  }
 
+handleGoodFeedBack = () => {
+  this.setstate(()=>{
+    this.state.good(() => {
+      good: this.state.good + 1
+    })
+  })
+}
 
-//   );
-// };
-
-
-class App extends Component {
   render() {
     return (
       <>
-      <Statistics good={2} neutral={3} bad={4} total={5} positivePercentage={6}/>
+      <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={5} positivePercentage={6}/>
       </>
     )
   }

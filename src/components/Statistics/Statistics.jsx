@@ -7,9 +7,9 @@ export const Statistics = ({good, neutral, bad, total}) => {
       <button>Bad</button>
       <h2>Statistics</h2>
       <ul>
-        <li>Good: {good}</li>
-        <li>Natural: {neutral}</li>
-        <li>Bad: {bad}</li>
+        <li><p>Good: {good}</p></li>
+        <li><p>Natural: {neutral}</p></li>
+        <li><p>Bad: {bad}</p></li>
       </ul>
     </>
   );
