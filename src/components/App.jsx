@@ -18,34 +18,8 @@ export class App extends Component {
   };
 
   onLeaveFeedback = e => {
-    switch (e) {
-      case 'good':
-        this.setState(prevState => {
-          return {
-            good: prevState.good + 1,
-          };
-        });
-        break;
-
-      case 'bad':
-        this.setState(prevState => {
-          return {
-            bad: prevState.bad + 1,
-          };
-        });
-        break;
-
-      case 'neutral':
-        this.setState(prevState => {
-          return {
-            neutral: prevState.neutral + 1,
-          };
-        });
-        break;
-
-      default:
-        console.log(undefined);
-    }
+    const { name } = e.target;
+    this.setState(state => ({ [name]: state[name] + 1 }));
   };
 
   render() {
@@ -55,16 +29,12 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['good', 'bad', 'neutral']}
-            onLeaveFeedback={e => {
-              this.onLeaveFeedback(e.target.textContent);
-            }}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
-        </Section>
 
-        {total === 0 ? (
-          <Notification message="There is no feedback" />
-        ) : (
-          <Section>
+          {total === 0 ? (
+            <Notification message="There is no feedback" />
+          ) : (
             <Statistics
               good={this.state.good}
               neutral={this.state.neutral}
@@ -72,8 +42,8 @@ export class App extends Component {
               total={this.countTotalFeedback()}
               positivePercentage={(this.state.good * 100) / total}
             />
-          </Section>
-        )}
+          )}
+        </Section>
       </>
     );
   }
